@@ -187,12 +187,11 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 		case "action_test":
 			sendTextMessage(sender, "This works nigga!");
 			break;
+	
 		default:
 			//unhandled action, just send back the text
 			sendTextMessage(sender, responseText);
-		default:
-			//unhandled action, just send back the text
-			sendTextMessage(sender, responseText);
+
 	}
 }
 
