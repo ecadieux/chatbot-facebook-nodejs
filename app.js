@@ -201,7 +201,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 				if (firstName != "" && lastName != ""){
 					let emailContent = "Le prénom est "+firstName+" et le nom de famille est "+lastName+".";
 					sendEmail("Nouveau participant",emailContent)
-					// TODO: Create function to send emails.
+
 				}
 			}
 			break;
