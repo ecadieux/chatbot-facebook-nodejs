@@ -198,7 +198,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 				let firstName = (isDefined(contexts[0].parameters["prenom"]) && contexts[0].parameters["prenom"] != "") ? contexts[0].parameters["prenom"] :"";
 				let lastName = (isDefined(contexts[0].parameters["nom"]) && contexts[0].parameters["nom"] != "") ? contexts[0].parameters["nom"] :"";
 
-				if (firstName 1= "" && lastName != ""){
+				if (firstName != "" && lastName != ""){
 					let emailContent = "Le prénom est "+firstName+" et le nom de famille est "+lastName+".";
 					sendEmail("Nouveau participant",emailContent)
 					// TODO: Create function to send emails.
