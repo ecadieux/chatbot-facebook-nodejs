@@ -335,7 +335,7 @@ function handleApiAiResponse(sender, response) {
 	} else if (responseText == '' && !isDefined(action)) {
 		//api ai could not evaluate input.
 		console.log('Unknown query' + response.result.resolvedQuery);
-		sendTextMessage(sender, "Je n'ai pas bien compris. Pouzez-vous répéter?");
+		sendTextMessage(sender, "Je n'ai pas bien compris. Pouvez-vous répéter?");
 	} else if (isDefined(action)) {
 		handleApiAiAction(sender, action, responseText, contexts, parameters);
 	} else if (isDefined(responseData) && isDefined(responseData.facebook)) {
