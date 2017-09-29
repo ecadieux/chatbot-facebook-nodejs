@@ -184,10 +184,16 @@ function handleEcho(messageId, appId, metadata) {
 
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 	switch (action) {
-		case "action_test":
-			sendTextMessage(sender, "This works nigga!");
+		case "store_prenom_nom":
+			if(isDefined(contexts[0]) && contexts[0].name == "q1-nom" && contexts[0].parameters){
+				sendTextMessage(sender, "The context is"+contexts[0].name + "and it has parameters!");
+			}
 			break;
-	
+
+		case "action_test":
+			sendTextMessage(sender, "This test action works!");
+			break;
+
 		default:
 			//unhandled action, just send back the text
 			sendTextMessage(sender, responseText);
