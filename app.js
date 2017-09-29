@@ -26,6 +26,15 @@ if (!config.FB_APP_SECRET) {
 if (!config.SERVER_URL) { //used for ink to static files
 	throw new Error('missing SERVER_URL');
 }
+if (!config.SENDGRID_API_KEY) { //used for sending emails
+	throw new Error('missing SENDGRID_API_KEY');
+}
+if (!config.EMAIL_FROM) { //used for storing the from email in sendEmail function
+	throw new Error('missing EMAIL_FROM');
+}
+if (!config.EMAIL_TO) { //used for storing the to email in sendEmail function
+	throw new Error('missing EMAIL_TO');
+}
 
 
 
@@ -186,7 +195,14 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 	switch (action) {
 		case "store_prenom_nom":
 			if(isDefined(contexts[0]) && contexts[0].name == "q1-nom" && contexts[0].parameters){
-				sendTextMessage(sender, "The context is"+contexts[0].name + "and it has parameters!");
+				let firstName = (isDefined(contexts[0].parameters["prenom"]) && contexts[0].parameters["prenom"] != "") ? contexts[0].parameters["prenom"] :"";
+				let lastName = (isDefined(contexts[0].parameters["nom"]) && contexts[0].parameters["nom"] != "") ? contexts[0].parameters["nom"] :"";
+
+				if (firstName 1= "" && lastName != ""){
+					let emailContent = "Le prénom est "+firstName+" et le nom de famille est "+lastName+".";
+					sendEmail("Nouveau participant",emailContent)
+					// TODO: Create function to send emails.
+				}
 			}
 			break;
 
@@ -864,6 +880,31 @@ function verifyRequestSignature(req, res, buf) {
 		}
 	}
 }
+
+
+function sendEmail(subject, content){
+	var helper = require('sendgrid').mail;
+	var from_email = new helper.Email(config.EMAIL_FROM);
+	var to_email = new helper.Email(config.EMAIL_TO);
+	var subject = subject;
+	var content = new helper.Content('text/html', content);
+	var mail = new helper.Mail(from_email, subject, to_email, content);
+
+	var sg = require('sendgrid')(config.SENDGRID_API_KEY);
+	var request = sg.emptyRequest({
+	  method: 'POST',
+	  path: '/v3/mail/send',
+	  body: mail.toJSON(),
+	}
+});
+
+sg.API(request, function(error, response) {
+  console.log(response.statusCode);
+  console.log(response.body);
+  console.log(response.headers);
+});
+}
+
 
 function isDefined(obj) {
 	if (typeof obj == 'undefined') {
