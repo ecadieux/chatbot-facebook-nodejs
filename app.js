@@ -166,7 +166,7 @@ function receivedMessage(event) {
 
 function handleMessageAttachments(messageAttachments, senderID){
 	//for now just reply
-	sendTextMessage(senderID, "Attachment received. Thank you.");
+	sendTextMessage(senderID, "J'ai bien reçu votre pièce jointe, merci!");
 }
 
 function handleQuickReply(senderID, quickReply, messageId) {
