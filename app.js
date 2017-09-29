@@ -897,7 +897,7 @@ function sendEmail(subject, content){
 	  body: mail.toJSON(),
 
 });
-}
+
 
 sg.API(request, function(error, response) {
   console.log(response.statusCode);
