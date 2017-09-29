@@ -185,7 +185,7 @@ function handleEcho(messageId, appId, metadata) {
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 	switch (action) {
 		case 0:
-			action = action_test;
+			action = "action_test";
 			sendTextMessage(sender, "This motherfuckin' action works nigga!");
 			break;
 		default:
