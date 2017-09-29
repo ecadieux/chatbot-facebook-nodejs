@@ -335,7 +335,7 @@ function handleApiAiResponse(sender, response) {
 	} else if (responseText == '' && !isDefined(action)) {
 		//api ai could not evaluate input.
 		console.log('Unknown query' + response.result.resolvedQuery);
-		sendTextMessage(sender, "I'm not sure what you want. Can you be more specific?");
+		sendTextMessage(sender, "Je n'ai pas bien compris. Pouzez-vous répéter?");
 	} else if (isDefined(action)) {
 		handleApiAiAction(sender, action, responseText, contexts, parameters);
 	} else if (isDefined(responseData) && isDefined(responseData.facebook)) {
@@ -750,7 +750,7 @@ function receivedPostback(event) {
 	switch (payload) {
 		default:
 			//unindentified payload
-			sendTextMessage(senderID, "I'm not sure what you want. Can you be more specific?");
+			sendTextMessage(senderID, "Je ne crois pas que j'ai bien compris. Pouvez-vous essayer d'être plus précis?");
 			break;
 
 	}
