@@ -685,7 +685,7 @@ function greetUserText(userId) {
 				console.log("FB user: %s %s, %s",
 					user.first_name, user.last_name, user.gender);
 
-				sendTextMessage(userId, "Welcome " + user.first_name + '!');
+				sendTextMessage(userId, "Bonjour " + user.first_name + '! Bienvenue sur le jeu concours Mustela !');
 			} else {
 				console.log("Cannot get data for fb user with id",
 					userId);
