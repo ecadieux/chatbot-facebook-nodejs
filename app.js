@@ -685,14 +685,8 @@ function greetUserText(userId) {
 				console.log("FB user: %s %s, %s",
 					user.first_name, user.last_name, user.gender);
 
-				sendTextMessage(userId, "Bonjour " + user.first_name + '! Bienvenue sur le jeu concours Mustela !');
-				sendTextMessage(userId, "Chaque jour, nous vous poserons une question.");
-				sendTextMessage(userId, "Les réponses sont sur www.mustela.ca/fr");
-				sendTextMessage(userId, "Le jeu se terminera le dimanche 15 octobre.");
-				sendTextMessage(userId, "Vous pourrez être tiré au sort.");
-				sendTextMessage(userId, "À gagner : Un panier de produits Mustela selon le type de peau de votre enfant");
-				sendTextMessage(userId, "Pour plus de détails, voici le règlement du jeu : mustela.ca/musti-robot");
-				sendTextMessage(userId, "Prêt à jouer ?");
+				sendTextMessage(userId, "Bonjour " + user.first_name + '! Bienvenue sur le jeu concours Mustela ! \n Chaque jour, nous vous poserons une question. \n Les réponses sont sur www.mustela.ca/fr \n Le jeu se terminera le dimanche 15 octobre. \n Si vous avez au moins trois bonnes réponses, bravo ! \n Vous pourrez être tiré au sort. \n À gagner : Un panier de produits Mustela selon le type de peau de votre enfant. \n Pour plus de détails, voici le règlement du jeu : mustela.ca/musti-robot \n Prêt à jouer ?');
+			
 
 
 
