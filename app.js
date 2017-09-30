@@ -748,6 +748,10 @@ function receivedPostback(event) {
 	var payload = event.postback.payload;
 
 	switch (payload) {
+		case "GET_STARTED":
+				greetUserText(senderID);
+			break;
+
 		default:
 			//unindentified payload
 			sendTextMessage(senderID, "Je ne crois pas que j'ai bien compris. Pouvez-vous essayer d'être plus précis?");
