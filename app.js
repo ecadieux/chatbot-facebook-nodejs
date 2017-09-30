@@ -6,6 +6,7 @@ const express = require('express');
 const crypto = require('crypto');
 const bodyParser = require('body-parser');
 const request = require('request');
+const pg = require('pg');
 const app = express();
 const uuid = require('uuid');
 
@@ -193,6 +194,8 @@ function handleEcho(messageId, appId, metadata) {
 
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 	switch (action) {
+
+		// TODO: Remove nom and prenom because they already exist in Facebook Graph
 		case "store_prenom_nom":
 			if(isDefined(contexts[0]) && contexts[0].name == "q1-nom" && contexts[0].parameters){
 				let firstName = (isDefined(contexts[0].parameters["prenom"]) && contexts[0].parameters["prenom"] != "") ? contexts[0].parameters["prenom"] :"";
