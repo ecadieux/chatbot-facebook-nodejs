@@ -686,6 +686,16 @@ function greetUserText(userId) {
 					user.first_name, user.last_name, user.gender);
 
 				sendTextMessage(userId, "Bonjour " + user.first_name + '! Bienvenue sur le jeu concours Mustela !');
+				sendTextMessage(userId, "Chaque jour, nous vous poserons une question.");
+				sendTextMessage(userId, "Les réponses sont sur www.mustela.ca/fr");
+				sendTextMessage(userId, "Le jeu se terminera le dimanche 15 octobre.");
+				sendTextMessage(userId, "Vous pourrez être tiré au sort.");
+				sendTextMessage(userId, "À gagner : Un panier de produits Mustela selon le type de peau de votre enfant");
+				sendTextMessage(userId, "Pour plus de détails, voici le règlement du jeu : mustela.ca/musti-robot");
+				sendTextMessage(userId, "Prêt à jouer ?");
+
+
+
 			} else {
 				console.log("Cannot get data for fb user with id",
 					userId);
