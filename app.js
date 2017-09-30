@@ -689,45 +689,49 @@ function greetUserText(userId) {
 			var user = JSON.parse(body);
 
 			if (user.first_name) {
+
+
+				var pool = new pg.Pool(config.PG_CONFIG);
+					pool.connect(function(err, client, done) {
+						if (err) {
+							return console.error('Error acquiring client', err.stack);
+						}
+						var rows = [];
+						console.log('fetching user');
+						client.query(`SELECT id FROM users WHERE fb_id='${userId}' LIMIT 1`,
+							function(err, result) {
+								console.log('query result ' + result);
+								if (err) {
+									console.log('Query error: ' + err);
+								} else {
+									console.log('rows: ' + result.rows.length);
+									if (result.rows.length === 0) {
+										let sql = 'INSERT INTO users (fb_id, first_name, last_name, profile_pic, ' +
+											'locale, timezone, gender) VALUES ($1, $2, $3, $4, $5, $6, $7)';
+										console.log('sql: ' + sql);
+										client.query(sql,
+											[
+												userId,
+												user.first_name,
+												user.last_name,
+												user.profile_pic,
+												user.locale,
+												user.timezone,
+												user.gender
+											]);
+									}
+								}
+							});
+
+					});
+					pool.end();
+					
 				console.log("FB user: %s %s, %s",
 					user.first_name, user.last_name, user.gender);
 
 				sendTextMessage(userId, "Bonjour " + user.first_name + '! Bienvenue sur le jeu concours Mustela !\nChaque jour, nous vous poserons une question.\nLes réponses sont sur www.mustela.ca/fr\nLe jeu se terminera le dimanche 15 octobre.\nSi vous avez au moins trois bonnes réponses, bravo !\nVous pourrez être tiré au sort.\nÀ gagner : Un panier de produits Mustela selon le type de peau de votre enfant.\nPour plus de détails, voici le règlement du jeu : mustela.ca/musti-robot\nPrêt à jouer ?');
 
-										var pool = new pg.Pool(config.PG_CONFIG);
-											pool.connect(function(err, client, done) {
-												if (err) {
-													return console.error('Error acquiring client', err.stack);
-												}
-												var rows = [];
-												console.log('fetching user');
-												client.query(`SELECT id FROM users WHERE fb_id='${userId}' LIMIT 1`,
-													function(err, result) {
-														console.log('query result ' + result);
-														if (err) {
-															console.log('Query error: ' + err);
-														} else {
-															console.log('rows: ' + result.rows.length);
-															if (result.rows.length === 0) {
-																let sql = 'INSERT INTO users (fb_id, first_name, last_name, profile_pic, ' +
-																	'locale, timezone, gender) VALUES ($1, $2, $3, $4, $5, $6, $7)';
-																console.log('sql: ' + sql);
-																client.query(sql,
-																	[
-																		userId,
-																		user.first_name,
-																		user.last_name,
-																		user.profile_pic,
-																		user.locale,
-																		user.timezone,
-																		user.gender
-																	]);
-															}
-														}
-													});
 
-											});
-											pool.end();
 
 
 			} else {
