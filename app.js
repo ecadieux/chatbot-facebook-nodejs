@@ -10,7 +10,7 @@ const pg = require('pg');
 const app = express();
 const uuid = require('uuid');
 const userData = require('./user');
-const answers = require('./answers');
+
 
 pg.defaults.ssl = true;
 
