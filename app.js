@@ -101,40 +101,38 @@ app.post('/webhook/', function (req, res) {
 	console.log(JSON.stringify(data));
 
 
+		// Make sure this is a page subscription
+		if (data.object == 'page') {
+			// Iterate over each entry
+			// There may be multiple if batched
+			data.entry.forEach(function (pageEntry) {
+				var pageID = pageEntry.id;
+				var timeOfEvent = pageEntry.time;
 
-	// Make sure this is a page subscription
-	if (data.object == 'page') {
-		// Iterate over each entry
-		// There may be multiple if batched
-		data.entry.forEach(function (pageEntry) {
-			var pageID = pageEntry.id;
-			var timeOfEvent = pageEntry.time;
-
-			// Iterate over each messaging event
-			pageEntry.messaging.forEach(function (messagingEvent) {
-				if (messagingEvent.optin) {
-					receivedAuthentication(messagingEvent);
-				} else if (messagingEvent.message) {
-					receivedMessage(messagingEvent);
-				} else if (messagingEvent.delivery) {
-					receivedDeliveryConfirmation(messagingEvent);
-				} else if (messagingEvent.postback) {
-					receivedPostback(messagingEvent);
-				} else if (messagingEvent.read) {
-					receivedMessageRead(messagingEvent);
-				} else if (messagingEvent.account_linking) {
-					receivedAccountLink(messagingEvent);
-				} else {
-					console.log("Webhook received unknown messagingEvent: ", messagingEvent);
-				}
+				// Iterate over each messaging event
+				pageEntry.messaging.forEach(function (messagingEvent) {
+					if (messagingEvent.optin) {
+						receivedAuthentication(messagingEvent);
+					} else if (messagingEvent.message) {
+						receivedMessage(messagingEvent);
+					} else if (messagingEvent.delivery) {
+						receivedDeliveryConfirmation(messagingEvent);
+					} else if (messagingEvent.postback) {
+						receivedPostback(messagingEvent);
+					} else if (messagingEvent.read) {
+						receivedMessageRead(messagingEvent);
+					} else if (messagingEvent.account_linking) {
+						receivedAccountLink(messagingEvent);
+					} else {
+						console.log("Webhook received unknown messagingEvent: ", messagingEvent);
+					}
+				});
 			});
-		});
-
-		// Assume all went well.
-		// You must send back a 200, within 20 seconds
-		res.sendStatus(200);
-	}
-});
+			// Assume all went well.
+			// You must send back a 200, within 20 seconds
+			res.sendStatus(200);
+		}
+	});
 
 
 function setSessionAndUser(senderID) {
