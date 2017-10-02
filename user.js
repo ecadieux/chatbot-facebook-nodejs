@@ -18,7 +18,7 @@ module.exports = function(callback,userId){
       var user = JSON.parse(body);
 
       if (user.first_name) {
-
+        console.log('First name correctly fetched from user object.');
 
         var pool = new pg.Pool(config.PG_CONFIG);
           pool.connect(function(err, client, done) {
@@ -51,7 +51,7 @@ module.exports = function(callback,userId){
                   }
                 }
               });
-                
+
                 callback(user);
           });
           pool.end();
