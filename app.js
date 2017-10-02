@@ -722,10 +722,10 @@ function greetUserText(userId) {
 									}
 								}
 							});
-
+								done();
 					});
 					pool.end();
-					
+
 				console.log("FB user: %s %s, %s",
 					user.first_name, user.last_name, user.gender);
 
