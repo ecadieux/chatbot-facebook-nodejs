@@ -149,7 +149,7 @@ function setSessionAndUser(senderID) {
 }
 
 
-}
+
 
 
 function receivedMessage(event) {
