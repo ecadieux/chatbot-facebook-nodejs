@@ -21,7 +21,7 @@ module.exports = function(callback, userId) {
                 console.log("FB user: %s %s, %s",
                     user.first_name, user.last_name, user.gender);
 
-                var pool = new pg.Pool()
+                var pool = new pg.Pool(config.PG_CONFIG)
                 pool.connect(function (err, client, done) {
                     if (err) throw err;
                     console.log('connect to postgres. Searching for a user...');
