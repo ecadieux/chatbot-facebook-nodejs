@@ -137,17 +137,16 @@ app.post('/webhook/', function (req, res) {
 });
 
 
-function setSessionAndUser(senderID){
+function setSessionAndUser(senderID) {
 	if (!sessionIds.has(senderID)) {
 		sessionIds.set(senderID, uuid.v1());
 	}
-	if (!usersMap.has(senderID)){
-			userData(function(user){
-				usersMap.set(senderID,user);
-
-			},senderID);
-
+	if (!usersMap.has(senderID)) {
+		userData( function (user) {
+			usersMap.set(senderID, user);
+		}, senderID);
 	}
+}
 
 
 }

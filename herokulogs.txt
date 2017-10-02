@@ -1,0 +1,101 @@
+2017-10-02T20:37:57.000000+00:00 app[api]: Build started by user eric.c@alpacode.com
+2017-10-02T20:38:08.545497+00:00 heroku[web.1]: State changed from crashed to starting
+2017-10-02T20:38:06.920607+00:00 app[api]: Release v64 created by user eric.c@alpacode.com
+2017-10-02T20:37:57.000000+00:00 app[api]: Build succeeded
+2017-10-02T20:38:06.920607+00:00 app[api]: Deploy adb6c4ee by user eric.c@alpacode.com
+2017-10-02T20:38:10.456935+00:00 heroku[web.1]: Starting process with command `node app.js`
+2017-10-02T20:38:13.617905+00:00 app[web.1]: running on port 44302
+2017-10-02T20:38:14.286380+00:00 heroku[web.1]: State changed from starting to up
+2017-10-02T20:38:15.486963+00:00 heroku[router]: at=info method=GET path="/" host=musti-robot.herokuapp.com request_id=a3dc394c-4931-4562-ba2d-3720445551f3 fwd="69.17.233.182" dyno=web.1 connect=0ms service=23ms status=200 bytes=242 protocol=https
+2017-10-02T20:38:27.121287+00:00 heroku[router]: at=info method=POST path="/webhook" host=musti-robot.herokuapp.com request_id=af955606-2e4a-4f31-ad51-ced20363731f fwd="173.252.90.241" dyno=web.1 connect=1ms service=110ms status=500 bytes=404 protocol=https
+2017-10-02T20:38:27.065790+00:00 app[web.1]: {"object":"page","entry":[{"id":"912837312179061","time":1506976706830,"messaging":[{"recipient":{"id":"912837312179061"},"timestamp":1506976706830,"sender":{"id":"945859885542482"},"postback":{"payload":"GET_STARTED","title":"Démarrer"}}]}]}
+2017-10-02T20:38:27.122977+00:00 app[web.1]: TypeError: Cannot read property 'first_name' of undefined
+2017-10-02T20:38:27.122980+00:00 app[web.1]:     at greetUserText (/app/app.js:701:43)
+2017-10-02T20:38:27.122980+00:00 app[web.1]:     at receivedPostback (/app/app.js:757:5)
+2017-10-02T20:38:27.122981+00:00 app[web.1]:     at /app/app.js:122:6
+2017-10-02T20:38:27.122982+00:00 app[web.1]:     at Array.forEach (native)
+2017-10-02T20:38:27.122982+00:00 app[web.1]:     at /app/app.js:114:24
+2017-10-02T20:38:27.122983+00:00 app[web.1]:     at Array.forEach (native)
+2017-10-02T20:38:27.122984+00:00 app[web.1]:     at /app/app.js:109:14
+2017-10-02T20:38:27.122986+00:00 app[web.1]:     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2017-10-02T20:38:27.122987+00:00 app[web.1]:     at next (/app/node_modules/express/lib/router/route.js:137:13)
+2017-10-02T20:38:27.122987+00:00 app[web.1]:     at Route.dispatch (/app/node_modules/express/lib/router/route.js:112:3)
+2017-10-02T20:38:27.266164+00:00 app[web.1]: FB user: Éric Cadieux-Seney, male
+2017-10-02T20:38:27.273074+00:00 app[web.1]: {"object":"page","entry":[{"id":"912837312179061","time":1506976706830,"messaging":[{"recipient":{"id":"912837312179061"},"timestamp":1506976706830,"sender":{"id":"945859885542482"},"postback":{"payload":"GET_STARTED","title":"Démarrer"}}]}]}
+2017-10-02T20:38:27.285441+00:00 app[web.1]: TypeError: Cannot read property 'first_name' of undefined
+2017-10-02T20:38:27.285445+00:00 app[web.1]:     at greetUserText (/app/app.js:701:43)
+2017-10-02T20:38:27.285445+00:00 app[web.1]:     at receivedPostback (/app/app.js:757:5)
+2017-10-02T20:38:27.285446+00:00 app[web.1]:     at /app/app.js:122:6
+2017-10-02T20:38:27.285447+00:00 app[web.1]:     at Array.forEach (native)
+2017-10-02T20:38:27.285448+00:00 app[web.1]:     at /app/app.js:114:24
+2017-10-02T20:38:27.285448+00:00 app[web.1]:     at Array.forEach (native)
+2017-10-02T20:38:27.285449+00:00 app[web.1]:     at /app/app.js:109:14
+2017-10-02T20:38:27.285450+00:00 app[web.1]:     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2017-10-02T20:38:27.285451+00:00 app[web.1]:     at next (/app/node_modules/express/lib/router/route.js:137:13)
+2017-10-02T20:38:27.285452+00:00 app[web.1]:     at Route.dispatch (/app/node_modules/express/lib/router/route.js:112:3)
+2017-10-02T20:38:27.302431+00:00 app[web.1]: fetching user
+2017-10-02T20:38:27.309129+00:00 app[web.1]: query result undefined
+2017-10-02T20:38:27.309194+00:00 app[web.1]: Query error: Error: Connection terminated
+2017-10-02T20:38:27.284194+00:00 heroku[router]: at=info method=POST path="/webhook" host=musti-robot.herokuapp.com request_id=f6c997ea-7c09-4236-b237-5e2d228914d9 fwd="173.252.90.242" dyno=web.1 connect=0ms service=25ms status=500 bytes=404 protocol=https
+2017-10-02T20:38:27.430906+00:00 heroku[router]: at=info method=POST path="/webhook" host=musti-robot.herokuapp.com request_id=e2d26068-2471-4cac-9dc0-d258e3ddf41a fwd="173.252.90.241" dyno=web.1 connect=2ms service=15ms status=200 bytes=201 protocol=https
+2017-10-02T20:38:27.388522+00:00 app[web.1]: FB user: Éric Cadieux-Seney, male
+2017-10-02T20:38:27.415489+00:00 app[web.1]: query result undefined
+2017-10-02T20:38:27.604298+00:00 app[web.1]:     at /app/app.js:114:23
+2017-10-02T20:38:27.604299+00:00 app[web.1]:     at Array.forEach (native)
+2017-10-02T20:38:27.604302+00:00 app[web.1]:     at Route.dispatch (/app/node_modules/express/lib/router/route.js:112:3)
+2017-10-02T20:38:27.412661+00:00 app[web.1]: fetching user
+2017-10-02T20:38:27.415554+00:00 app[web.1]: Query error: Error: Connection terminated
+2017-10-02T20:38:27.590866+00:00 app[web.1]: {"object":"page","entry":[{"id":"912837312179061","time":1506976706830,"standby":[{"recipient":{"id":"912837312179061"},"timestamp":1506976706830,"sender":{"id":"945859885542482"},"postback":{"title":"Démarrer"}}]}]}
+2017-10-02T20:38:27.604295+00:00 app[web.1]: TypeError: Cannot read property 'forEach' of undefined
+2017-10-02T20:38:27.604300+00:00 app[web.1]:     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2017-10-02T20:38:27.422087+00:00 app[web.1]: {"object":"page","entry":[{"id":"912837312179061","time":1506976706830,"messaging":[{"recipient":{"id":"912837312179061"},"timestamp":1506976706830,"sender":{"id":"945859885542482"},"postback":{"payload":"GET_STARTED","title":"Démarrer"}}]}]}
+2017-10-02T20:38:27.427246+00:00 app[web.1]: Received postback for user 945859885542482 and page 912837312179061 with payload 'GET_STARTED' at 1506976706830
+2017-10-02T20:38:27.604303+00:00 app[web.1]:     at /app/node_modules/express/lib/router/index.js:281:22
+2017-10-02T20:38:27.604299+00:00 app[web.1]:     at /app/app.js:109:14
+2017-10-02T20:38:27.604304+00:00 app[web.1]:     at Function.process_params (/app/node_modules/express/lib/router/index.js:335:12)
+2017-10-02T20:38:27.604301+00:00 app[web.1]:     at next (/app/node_modules/express/lib/router/route.js:137:13)
+2017-10-02T20:38:27.604303+00:00 app[web.1]:     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2017-10-02T20:38:27.634286+00:00 app[web.1]: Successfully sent message with id mid.$cAAM-OFZeqCZlEBT7_le3s-ztlwkj to recipient 945859885542482
+2017-10-02T20:38:27.604305+00:00 app[web.1]:     at next (/app/node_modules/express/lib/router/index.js:275:10)
+2017-10-02T20:38:27.603481+00:00 heroku[router]: at=info method=POST path="/webhook" host=musti-robot.herokuapp.com request_id=8e437f51-ebeb-4505-8b60-21c53aca3467 fwd="173.252.90.229" dyno=web.1 connect=0ms service=18ms status=500 bytes=404 protocol=https
+2017-10-02T20:38:27.778903+00:00 heroku[router]: at=info method=POST path="/webhook" host=musti-robot.herokuapp.com request_id=6881ff89-98a0-4269-82f1-7a42ac90dd6b fwd="173.252.90.245" dyno=web.1 connect=1ms service=7ms status=500 bytes=404 protocol=https
+2017-10-02T20:38:27.779808+00:00 heroku[router]: at=info method=POST path="/webhook" host=musti-robot.herokuapp.com request_id=a427dfdc-3b73-4969-9ee8-3d76cd94e8ed fwd="173.252.124.204" dyno=web.1 connect=2ms service=6ms status=200 bytes=201 protocol=https
+2017-10-02T20:38:27.775771+00:00 app[web.1]: {"object":"page","entry":[{"id":"912837312179061","time":1506976707634,"messaging":[{"sender":{"id":"912837312179061"},"recipient":{"id":"945859885542482"},"timestamp":1506976707582,"message":{"is_echo":true,"app_id":1952503974988302,"mid":"mid.$cAAM-OFZeqCZlEBT7_le3s-ztlwkj","seq":31812,"text":"Bonjour Éric! Bienvenue sur le jeu concours Mustela !\nChaque jour, nous vous poserons une question.\nLes réponses sont sur www.mustela.ca/fr\nLe jeu se terminera le dimanche 15 octobre.\nSi vous avez au moins trois bonnes réponses, bravo !\nVous pourrez être tiré au sort.\nÀ gagner : Un panier de produits Mustela selon le type de peau de votre enfant.\nPour plus de détails, voici le règlement du jeu : mustela.ca/musti-robot\nPrêt à jouer ?"}}]}]}
+2017-10-02T20:38:27.777726+00:00 app[web.1]: Received echo for message mid.$cAAM-OFZeqCZlEBT7_le3s-ztlwkj and app 1952503974988302 with metadata undefined
+2017-10-02T20:38:27.782192+00:00 app[web.1]: {"object":"page","entry":[{"id":"912837312179061","time":1506976706830,"standby":[{"recipient":{"id":"912837312179061"},"timestamp":1506976706830,"sender":{"id":"945859885542482"},"postback":{"title":"Démarrer"}}]}]}
+2017-10-02T20:38:27.783088+00:00 app[web.1]: TypeError: Cannot read property 'forEach' of undefined
+2017-10-02T20:38:27.783090+00:00 app[web.1]:     at /app/app.js:114:23
+2017-10-02T20:38:27.783091+00:00 app[web.1]:     at Array.forEach (native)
+2017-10-02T20:38:27.783092+00:00 app[web.1]:     at /app/app.js:109:14
+2017-10-02T20:38:27.783093+00:00 app[web.1]:     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2017-10-02T20:38:27.783094+00:00 app[web.1]:     at next (/app/node_modules/express/lib/router/route.js:137:13)
+2017-10-02T20:38:27.783095+00:00 app[web.1]:     at Route.dispatch (/app/node_modules/express/lib/router/route.js:112:3)
+2017-10-02T20:38:27.783096+00:00 app[web.1]:     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2017-10-02T20:38:27.783096+00:00 app[web.1]:     at /app/node_modules/express/lib/router/index.js:281:22
+2017-10-02T20:38:27.783097+00:00 app[web.1]:     at Function.process_params (/app/node_modules/express/lib/router/index.js:335:12)
+2017-10-02T20:38:27.783097+00:00 app[web.1]:     at next (/app/node_modules/express/lib/router/index.js:275:10)
+2017-10-02T20:38:27.865729+00:00 app[web.1]: Cannot get data for fb user with id 912837312179061
+2017-10-02T20:38:27.965720+00:00 app[web.1]: {"object":"page","entry":[{"id":"912837312179061","time":1506976706830,"standby":[{"recipient":{"id":"912837312179061"},"timestamp":1506976706830,"sender":{"id":"945859885542482"},"postback":{"title":"Démarrer"}}]}]}
+2017-10-02T20:38:27.966636+00:00 app[web.1]: TypeError: Cannot read property 'forEach' of undefined
+2017-10-02T20:38:27.966639+00:00 app[web.1]:     at Array.forEach (native)
+2017-10-02T20:38:27.966638+00:00 app[web.1]:     at /app/app.js:114:23
+2017-10-02T20:38:27.966639+00:00 app[web.1]:     at /app/app.js:109:14
+2017-10-02T20:38:27.966640+00:00 app[web.1]:     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2017-10-02T20:38:27.966641+00:00 app[web.1]:     at next (/app/node_modules/express/lib/router/route.js:137:13)
+2017-10-02T20:38:27.966642+00:00 app[web.1]:     at Route.dispatch (/app/node_modules/express/lib/router/route.js:112:3)
+2017-10-02T20:38:27.966642+00:00 app[web.1]:     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2017-10-02T20:38:27.966643+00:00 app[web.1]:     at /app/node_modules/express/lib/router/index.js:281:22
+2017-10-02T20:38:27.966644+00:00 app[web.1]:     at Function.process_params (/app/node_modules/express/lib/router/index.js:335:12)
+2017-10-02T20:38:27.966644+00:00 app[web.1]:     at next (/app/node_modules/express/lib/router/index.js:275:10)
+2017-10-02T20:38:27.968622+00:00 heroku[router]: at=info method=POST path="/webhook" host=musti-robot.herokuapp.com request_id=08b54fb1-6707-4137-96fa-7099227f70e8 fwd="173.252.90.236" dyno=web.1 connect=0ms service=4ms status=500 bytes=404 protocol=https
+2017-10-02T20:38:28.696188+00:00 heroku[router]: at=info method=POST path="/webhook" host=musti-robot.herokuapp.com request_id=a75f4135-698c-4c55-b60a-88d6246c7aee fwd="173.252.124.18" dyno=web.1 connect=9ms service=4ms status=200 bytes=201 protocol=https
+2017-10-02T20:38:28.785633+00:00 heroku[router]: at=info method=POST path="/webhook" host=musti-robot.herokuapp.com request_id=0d3a8669-ce68-49fe-9a04-f7f24564f452 fwd="173.252.124.81" dyno=web.1 connect=0ms service=5ms status=200 bytes=201 protocol=https
+2017-10-02T20:38:28.692603+00:00 app[web.1]: {"object":"page","entry":[{"id":"912837312179061","time":1506976708535,"messaging":[{"sender":{"id":"945859885542482"},"recipient":{"id":"912837312179061"},"timestamp":1506976708529,"delivery":{"mids":["mid.$cAAM-OFZeqCZlEBT7_le3s-ztlwkj"],"watermark":1506976707582,"seq":0}}]}]}
+2017-10-02T20:38:28.693008+00:00 app[web.1]: All message before 1506976707582 were delivered.
+2017-10-02T20:38:28.784302+00:00 app[web.1]: {"object":"page","entry":[{"id":"912837312179061","time":1506976708644,"messaging":[{"sender":{"id":"945859885542482"},"recipient":{"id":"912837312179061"},"timestamp":1506976708640,"read":{"watermark":1506976707582,"seq":0}}]}]}
+2017-10-02T20:38:28.692917+00:00 app[web.1]: Received delivery confirmation for message ID: mid.$cAAM-OFZeqCZlEBT7_le3s-ztlwkj
+2017-10-02T20:38:28.784616+00:00 app[web.1]: Received message read event for watermark 1506976707582 and sequence number 0
+2017-10-02T20:38:32.256092+00:00 heroku[router]: at=info method=POST path="/webhook" host=musti-robot.herokuapp.com request_id=00652bce-2069-4064-b720-688542e34652 fwd="69.63.188.125" dyno=web.1 connect=1ms service=5ms status=200 bytes=201 protocol=https
+2017-10-02T20:38:32.253778+00:00 app[web.1]: {"object":"page","entry":[{"id":"912837312179061","time":1506976712131,"messaging":[{"sender":{"id":"945859885542482"},"recipient":{"id":"912837312179061"},"timestamp":1506976712127,"delivery":{"mids":["mid.$cAAM-OFZeqCZlEBT7_le3s-ztlwkj"],"watermark":1506976707582,"seq":0}}]}]}
+2017-10-02T20:38:32.255104+00:00 app[web.1]: Received delivery confirmation for message ID: mid.$cAAM-OFZeqCZlEBT7_le3s-ztlwkj
+2017-10-02T20:38:32.255213+00:00 app[web.1]: All message before 1506976707582 were delivered.
