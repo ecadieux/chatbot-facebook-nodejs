@@ -29,8 +29,8 @@ if (!config.FB_APP_SECRET) {
 if (!config.SERVER_URL) { //used for ink to static files
 	throw new Error('missing SERVER_URL');
 }
-if (!config.SENGRID_API_KEY) { //sending email
-	throw new Error('missing SENGRID_API_KEY');
+if (!config.SENDGRID_API_KEY) { //sending email
+	throw new Error('missing SENDGRID_API_KEY');
 }
 if (!config.EMAIL_FROM) { //sending email
 	throw new Error('missing EMAIL_FROM');
@@ -1010,7 +1010,7 @@ function sendEmail(subject, content) {
 	var content = new helper.Content("text/html", content);
 	var mail = new helper.Mail(from_email, subject, to_email, content);
 
-	var sg = require('sendgrid')(config.SENGRID_API_KEY);
+	var sg = require('sendgrid')(config.SENDGRID_API_KEY);
 	var request = sg.emptyRequest({
 		method: 'POST',
 		path: '/v3/mail/send',
