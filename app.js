@@ -10,6 +10,7 @@ const pg = require('pg');
 const app = express();
 const uuid = require('uuid');
 const userData = require('./user');
+const answers = require('./answers');
 
 pg.defaults.ssl = true;
 
@@ -211,6 +212,12 @@ function handleEcho(messageId, appId, metadata) {
 
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 	switch (action) {
+
+		case "email_yes":
+			answers.updateUserEmail(parameters['email'],sender);
+			let reply = "Ça a fonctionné! Le courriel devrait être dans la base de données."
+			sendTextMessage(sender,reply);
+			break;
 
 		// TODO: Remove nom and prenom because they already exist in Facebook Graph
 		case "store_prenom_nom":
