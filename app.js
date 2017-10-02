@@ -745,7 +745,7 @@ function receivedPostback(event) {
 	var senderID = event.sender.id;
 	var recipientID = event.recipient.id;
 	var timeOfPostback = event.timestamp;
-
+	setSessionAndUser(senderID);
 
 	// The 'payload' param is a developer-defined field which is set in a postback
 	// button for Structured Messages.
@@ -753,7 +753,7 @@ function receivedPostback(event) {
 
 	switch (payload) {
 		case "GET_STARTED":
-				setSessionAndUser(senderID);
+
 				greetUserText(senderID);
 			break;
 
