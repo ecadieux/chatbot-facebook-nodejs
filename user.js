@@ -18,7 +18,7 @@ module.exports = function(callback, userId) {
         var user = JSON.parse(body);
 
 
-        if (user.first_name.length > 0) {
+        if (user.first_name) {
 
             var pool = new pg.Pool(config.PG_CONFIG);
             pool.connect(function(err, client, done) {
