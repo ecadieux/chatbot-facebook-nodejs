@@ -48,10 +48,12 @@ module.exports = function(callback, userId) {
                                 ])
                             }
                         })
-
+                        done();
+                        callback(user);
                 })
-                done();
-                callback(user);
+
+
+                pool.end();
 
             } else {
                 console.log("Cannot get data for fb user with id",
