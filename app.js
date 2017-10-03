@@ -694,7 +694,7 @@ function sendAccountLinking(recipientId) {
 
 
 function greetUserText(userId) {
-	console.log("This is the userID in greetUserText:"+userID);
+	console.log("This is the userId in greetUserText:"+userId);
 	let user = usersMap.get(userId);
 	console.log("This is the user is greetUserText: "+user);
 	sendTextMessage(userId, "Bonjour " + user.first_name + '! Bienvenue sur le jeu concours Mustela !\nChaque jour, nous vous poserons une question.\nLes réponses sont sur www.mustela.ca/fr\nLe jeu se terminera le dimanche 15 octobre.\nSi vous avez au moins trois bonnes réponses, bravo !\nVous pourrez être tiré au sort.\nÀ gagner : Un panier de produits Mustela selon le type de peau de votre enfant.\nPour plus de détails, voici le règlement du jeu : mustela.ca/musti-robot\nPrêt à jouer ?');
