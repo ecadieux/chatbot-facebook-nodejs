@@ -22,7 +22,7 @@ module.exports = function(callback, userId) {
         console.log("This is the response: "+response);
         console.log("This is the result of response.first_name: "+response.first_name);
         console.log("This is the result of JSON parse:"+JSON.parse(body))
-        var user = JSON.parse(body);
+        var user = senderID; //JSON.parse(body);
         console.log("This is the log of the user object :"+user);
 
         if (user.first_name) {
