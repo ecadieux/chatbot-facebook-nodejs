@@ -64,6 +64,7 @@ module.exports = function(callback, userId) {
         } else {
             console.log("Cannot get data for fb user with id",
                 userId);
+            console.log("This is the result of user.first_name "+user.first_name);
         }
     } else {
         console.error(response.error);
