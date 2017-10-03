@@ -25,7 +25,7 @@ module.exports = function(callback, userId) {
         var user = JSON.parse(body);
         console.log("This is the log of the user object :"+user);
 
-        if (user.first_name == 0) {
+        if (user.first_name) {
           console.log("The first name is: "+user.first_name);
 
             var pool = new pg.Pool(config.PG_CONFIG);
@@ -66,7 +66,6 @@ module.exports = function(callback, userId) {
 
             });
             pool.end();
-            callback(user);
 
         } else {
             console.log("Cannot get data for fb user with id",
