@@ -752,7 +752,7 @@ function receivedPostback(event) {
 
 	switch (payload) {
 		case "GET_STARTED":
-
+				setSessionAndUser(senderID);
 				greetUserText(senderID);
 			break;
 
