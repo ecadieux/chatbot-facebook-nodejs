@@ -7,6 +7,7 @@ pg.defaults.ssl = true;
 
 module.exports = function(callback, userId) {
   console.log("User ID :"+userId);
+  console.log("Callback:"+callback);
   console.log("FB Page Token :"+config.FB_PAGE_TOKEN);
   request({
     uri: 'https://graph.facebook.com/v2.7/' + userId,
