@@ -147,7 +147,7 @@ function setSessionAndUser(senderID) {
 	}
 }
 
-
+console.log('This is userData :'+userData());
 
 
 
