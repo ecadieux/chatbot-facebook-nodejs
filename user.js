@@ -66,7 +66,7 @@ module.exports = function(callback, userId) {
 
             });
             pool.end();
-
+            callback(user);
 
         } else {
             console.log("Cannot get data for fb user with id",
