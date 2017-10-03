@@ -16,7 +16,8 @@ module.exports = function(callback, userId) {
 
 }, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-        console.log(body);
+        console.log("This is body :"+body);
+        console.log("This is the result of JSON parse:"+JSON.parse(body))
         var user = JSON.parse(body);
         console.log("This is the log of the user object :"+user);
 
