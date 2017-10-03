@@ -6,6 +6,7 @@ pg.defaults.ssl = true;
 
 
 module.exports = function(callback, userId) {
+  console.log(userId);
   request({
     uri: 'https://graph.facebook.com/v2.7/' + userId,
     qs: {
