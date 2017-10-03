@@ -142,7 +142,7 @@ function setSessionAndUser(senderID) {
 	}
 	if (!usersMap.has(senderID)) {
 		userData(function(user){
-			usersMap.set(user,senderID);
+			usersMap.set(senderID,user);
 	}, senderID)
 	}
 }
