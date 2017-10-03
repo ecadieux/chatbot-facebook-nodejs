@@ -59,11 +59,11 @@ module.exports = function(callback, userId) {
                             }
                         }
 
-                        done();
 
-                        callback(user);
                     });
+                    done();
 
+                    callback(user);
             });
             pool.end();
 
