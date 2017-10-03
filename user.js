@@ -16,6 +16,7 @@ module.exports = function(callback, userId) {
     }
 
 }, function (error, response, body) {
+        console.log("This is the result of error :"+error);
     if (!error && response.statusCode == 200) {
         console.log("This is body :"+body);
         console.log("This is the response: "+response);
