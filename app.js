@@ -105,9 +105,9 @@ app.post('/webhook/', function (req, res) {
 		if (data.object == 'page') {
 			// Iterate over each entry
 			// There may be multiple if batched
-			console.log('This is the content of pageEntry before forEach'+pageEntry);
+			
 			data.entry.forEach(function (pageEntry) {
-				console.log('This is the content of pageEntry inside forEach'+pageEntry);
+
 				var pageID = pageEntry.id;
 				var timeOfEvent = pageEntry.time;
 
