@@ -27,45 +27,40 @@ module.exports = function(callback, userId) {
         if (user.first_name) {
           console.log("The first name is: "+user.first_name);
 
-            var pool = new pg.Pool(config.PG_CONFIG);
-            pool.connect(function(err, client, done) {
-                if (err) {
-                    return console.error('Error acquiring client', err.stack);
-                }
-                var rows = [];
+          var pool = new pg.Pool(config.PG_CONFIG);
+                              pool.connect(function(err, client, done) {
+                              if (err) {
+                                return console.error('Error acquiring client', err.stack);
+                              }
+                              var rows = [];
+                              console.log('fetching user');
+                              client.query(`SELECT id FROM users WHERE fb_id='${userId}' LIMIT 1`,
+                                function(err, result) {
+                                  console.log('query result ' + result);
+                                  if (err) {
+                                    console.log('Query error: ' + err);
+                                  } else {
+                                    console.log('rows: ' + result.rows.length);
+                                    if (result.rows.length === 0) {
+                                      let sql = 'INSERT INTO users (fb_id, first_name, last_name, profile_pic, ' +
+                                        'locale, timezone, gender) VALUES ($1, $2, $3, $4, $5, $6, $7)';
+                                      console.log('sql: ' + sql);
+                                      client.query(sql,
+                                        [
+                                          userId,
+                                          user.first_name,
+                                          user.last_name,
+                                          user.profile_pic,
+                                          user.locale,
+                                          user.timezone,
+                                          user.gender
+                                        ]);
+                                    }
+                                  }
+                                });
 
-                client.query(`SELECT id FROM users WHERE fb_id='15861' LIMIT 1`,
-                    function(err, result) {
-                        console.log('query result ' + result);
-                        if (err) {
-                            console.log('Query error: ' + err);
-                        } else {
-                            console.log('rows: ' + result.rows.length);
-                            if (result.rows.length === 0) {
-                                let sql = 'INSERT INTO users (fb_id, first_name, last_name, profile_pic, ' +
-                                    'locale, timezone, gender) VALUES ($1, $2, $3, $4, $5, $6, $7)';
-                                console.log('sql: ' + sql);
-                                client.query(sql,
-                                    [
-                                        userId,
-                                        user.first_name,
-                                        user.last_name,
-                                        user.profile_pic,
-                                        user.locale,
-                                        user.timezone,
-                                        user.gender
-                                    ])
-                            }
-                        }
-
-
-                    });
-                    done();
-                    callback(user);
-                    console.log('This is the callback log at the end of the user function :'+callback(user));
-                    console.log('This is user at this end of the user.id function'+user.id);
-            });
-            pool.end();
+                              });
+                              pool.end();
 
         } else {
             console.log("Cannot get data for fb user with id",
