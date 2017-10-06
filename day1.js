@@ -37,14 +37,14 @@ var options = {
     sessionId: 'APIAIsessionID'
 };
 
-var request = appEvent.eventRequest(event, options);
+var APIAIrequest = appEvent.eventRequest(event, options);
 
-request.on('response', function(response) {
+APIAIrequest.on('response', function(response) {
     console.log(util.inspect(response, false, null));
 });
 
-request.on('error', function(error) {
+APIAIrequest.on('error', function(error) {
     console.log(error);
 });
 
-request.end();
+APIAIrequest.end();
