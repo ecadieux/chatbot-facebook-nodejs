@@ -18,10 +18,10 @@ mainApp.sendTextMessage(945859885542482,'This is a test for schedule day one.');
 console.log("Sending scheduled message");
 
 
-
+var APIAIsessionID = uuid.v1();
 
 var options = {
-    // hostname: 'eap.api.ai',
+    hostname: 'https://api.api.ai/v1/query',
 };
 
 var app = apiai(config.API_AI_CLIENT_ACCESS_TOKEN, options);
@@ -34,7 +34,7 @@ var event = {
 };
 
 var options = {
-    sessionId: '<UNIQE SESSION ID>'
+    sessionId: 'APIAIsessionID'
 };
 
 var request = app.eventRequest(event, options);
