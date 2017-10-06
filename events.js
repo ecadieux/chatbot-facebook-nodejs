@@ -12,7 +12,7 @@ const userData = require('./user');
 pg.defaults.ssl = true;
 
 // for api.ai webhooks
-
+/*
 app.get('/webhook-apiai/', function (req, res) {
 	var sessionID = req.sessionId;
   console.log('API.ai session id :'+sessionID);
@@ -25,7 +25,7 @@ app.get('/webhook-apiai/', function (req, res) {
 
   	res.send(sendTextMessage(945859885542482,'This is a test.'););
   	})
-
+*/
 // Event caller
 /*
   app.get('https://api.api.ai/v1/query', function (req, res) {
