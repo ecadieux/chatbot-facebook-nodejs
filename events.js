@@ -22,8 +22,8 @@ app.get('/webhook-apiai/', function (req, res) {
 
   app.get('/webhook-test/', function (req, res) {
 
-    sendTextMessage(945859885542482,'This is a test.');
-  	res.send("This is a test webhook");
+
+  	res.send(sendTextMessage(945859885542482,'This is a test.'););
   	})
 
 // Event caller
