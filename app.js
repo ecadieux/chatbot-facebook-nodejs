@@ -82,7 +82,10 @@ app.get('/', function (req, res) {
 
 app.get('/webhook-apiai/', function (req, res) {
 	console.log("request");
-		res.sendStatus(403);
+
+
+	res.status(200);
+	res.send("This seems to work");
 	}
 })
 
