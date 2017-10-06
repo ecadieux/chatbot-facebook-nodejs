@@ -157,7 +157,7 @@ function setSessionAndUser(senderID) {
 	}
 	if (!usersMap.has(senderID)) {
 		userData(function(user){
-			console.log('This is user in setSessionAndUser function'+user);
+			console.log('This is user.id in setSessionAndUser function'+user.id);
 			usersMap.set(senderID,user);
 	}, senderID)
 	}
