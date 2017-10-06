@@ -78,6 +78,15 @@ app.get('/', function (req, res) {
 	res.send("Bonjour, je suis l'application MustiRobot.")
 })
 
+// for api.ai webhooks
+
+app.get('/webhook-apiai/', function (req, res) {
+	console.log("request");
+		res.sendStatus(403);
+	}
+})
+
+
 // for Facebook verification
 app.get('/webhook/', function (req, res) {
 	console.log("request");
@@ -105,7 +114,7 @@ app.post('/webhook/', function (req, res) {
 		if (data.object == 'page') {
 			// Iterate over each entry
 			// There may be multiple if batched
-			
+
 			data.entry.forEach(function (pageEntry) {
 
 				var pageID = pageEntry.id;
@@ -699,7 +708,7 @@ function greetUserText(userId) {
 	console.log("This is the userId in greetUserText:"+userId);
 	let user = usersMap.get(userId);
 	console.log("This is the user is greetUserText: "+user);
-	sendTextMessage(userId, "Bonjour " + user.first_name + '! Bienvenue sur le jeu concours Mustela !\nChaque jour, nous vous poserons une question.\nLes réponses sont sur www.mustela.ca/fr\nLe jeu se terminera le dimanche 15 octobre.\nSi vous avez au moins trois bonnes réponses, bravo !\nVous pourrez être tiré au sort.\nÀ gagner : Un panier de produits Mustela selon le type de peau de votre enfant.\nPour plus de détails, voici le règlement du jeu : mustela.ca/musti-robot\nPrêt à jouer ?');
+	sendTextMessage(userId, "Bonjour " + user.first_name + '! Bienvenue sur le jeu concours Mustela !\nChaque jour, nous vous poserons une question.\nLes réponses sont sur www.mustela.ca/fr\nLe jeu se terminera le dimanche 15 octobre.\nSi vous avez au moins cinq bonnes réponses, bravo !\nVous pourrez être tiré au sort.\nÀ gagner : Un panier de produits Mustela selon le type de peau de votre enfant.\nPour plus de détails, voici le règlement du jeu : mustela.ca/musti-robot\nPrêt à jouer ?');
 }
 
 /*
