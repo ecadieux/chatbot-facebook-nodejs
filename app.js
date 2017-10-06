@@ -86,8 +86,7 @@ app.get('/webhook-apiai/', function (req, res) {
 
 	res.status(200);
 	res.send("This seems to work");
-	}
-})
+	})
 
 
 // for Facebook verification
