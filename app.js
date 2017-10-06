@@ -400,6 +400,18 @@ function sendToApiAi(sender, text) {
 	apiaiRequest.end();
 }
 
+// Sorry, this is bad, I know...
+sendTextMessage: function sendTextMessage(recipientId, text) {
+	var messageData = {
+		recipient: {
+			id: recipientId
+		},
+		message: {
+			text: text
+		}
+	}
+	callSendAPI(messageData);
+}
 
 module.exports = {
   sendTextMessage: function sendTextMessage(recipientId, text) {
