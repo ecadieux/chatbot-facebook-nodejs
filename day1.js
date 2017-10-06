@@ -8,7 +8,7 @@ const crypto = require('crypto');
 const bodyParser = require('body-parser');
 const app = express();
 const uuid = require('uuid');
-const userData = require('./user');
+const userData = require('./app');
 pg.defaults.ssl = true;
 
 
