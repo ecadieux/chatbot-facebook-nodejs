@@ -413,25 +413,6 @@ function sendTextMessage(recipientId, text) {
 	callSendAPI(messageData);
 }
 
-module.exports = {
-  sendTextMessage: function sendTextMessage(recipientId,text,quick_reply) {
-		var messageData = {
-			recipient: {
-				id: recipientId
-			},
-			message: {
-				text: text,
-				quick_replies:
-				      {
-				        content_type:"text",
-				        title: quick_reply
-							}
-		}}
-		callSendAPI(messageData);
-	}
-
-
-
 
 /*
  * Send an image using the Send API.
@@ -625,6 +606,25 @@ function sendReceiptMessage(recipientId, recipient_name, currency, payment_metho
  * Send a message with Quick Reply buttons.
  *
  */
+
+module.exports = {
+	function sendQuickReply(recipientId, text, replies, metadata) {
+		var messageData = {
+			recipient: {
+				id: recipientId
+			},
+			message: {
+				text: text,
+				metadata: isDefined(metadata)?metadata:'',
+				quick_replies: replies
+			}
+		};
+
+		callSendAPI(messageData);
+	}
+
+}
+
 function sendQuickReply(recipientId, text, replies, metadata) {
 	var messageData = {
 		recipient: {
