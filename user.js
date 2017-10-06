@@ -34,7 +34,7 @@ module.exports = function(callback, userId) {
                 }
                 var rows = [];
 
-                client.query(`SELECT id FROM users WHERE fb_id='${userId}' LIMIT 1`,
+                client.query(`SELECT id FROM users WHERE fb_id='15861' LIMIT 1`,
                     function(err, result) {
                         console.log('query result ' + result);
                         if (err) {
