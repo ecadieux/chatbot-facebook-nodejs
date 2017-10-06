@@ -15,7 +15,7 @@ pg.defaults.ssl = true;
 
 app.get('/webhook-apiai/', function (req, res) {
 	var sessionID = req.sessionId;
-
+  console.log('API.ai session id :'+sessionID);
 	res.status(200);
 	res.send("This seems to work :"+sessionID);
 	})
