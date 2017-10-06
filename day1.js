@@ -10,7 +10,8 @@ var options = {
     hostname: 'https://api.api.ai/v1/query',
 };
 
-var app = apiai("config.API_AI_CLIENT_ACCESS_TOKEN", options);
+
+var app = apiai("'"+config.API_AI_CLIENT_ACCESS_TOKEN+"'", options);
 
 var event = {
     name: "1_jour",
