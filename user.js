@@ -27,7 +27,7 @@ module.exports = function(callback, userId) {
         if (user.first_name) {
           console.log("The first name is: "+user.first_name);
 
-            var pool = new pg.Pool(config.PG_CONFIG);
+            var pool = new pg.Pool(config.DATABASE_URL);
             pool.connect(function(err, client, done) {
                 if (err) {
                     return console.error('Error acquiring client', err.stack);
