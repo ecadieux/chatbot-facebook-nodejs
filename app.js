@@ -109,7 +109,7 @@ app.get('/webhook/', function (req, res) {
  */
 app.post('/webhook/', function (req, res) {
 	var data = req.body;
-	console.log(JSON.stringify(data));
+	console.log('This is the result of req.body'+JSON.stringify(data));
 
 
 		// Make sure this is a page subscription
@@ -767,7 +767,6 @@ function receivedPostback(event) {
 
 	switch (payload) {
 		case "GET_STARTED":
-				console.log("This is senderID.first_name"+senderID.first_name);
 				greetUserText(senderID);
 			break;
 
