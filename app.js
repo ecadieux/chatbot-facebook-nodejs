@@ -78,15 +78,6 @@ app.get('/', function (req, res) {
 	res.send("Bonjour, je suis l'application MustiRobot.")
 })
 
-// for api.ai webhooks
-
-app.get('/webhook-apiai/', function (req, res) {
-	console.log("request");
-
-
-	res.status(200);
-	res.send("This seems to work");
-	})
 
 
 // for Facebook verification
@@ -410,19 +401,21 @@ function sendToApiAi(sender, text) {
 }
 
 
-
-
-function sendTextMessage(recipientId, text) {
-	var messageData = {
-		recipient: {
-			id: recipientId
-		},
-		message: {
-			text: text
+module.exports = {
+  sendTextMessage: function sendTextMessage(recipientId, text) {
+		var messageData = {
+			recipient: {
+				id: recipientId
+			},
+			message: {
+				text: text
+			}
 		}
+		callSendAPI(messageData);
 	}
-	callSendAPI(messageData);
-}
+  }
+
+
 
 /*
  * Send an image using the Send API.
