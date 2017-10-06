@@ -118,7 +118,7 @@ app.post('/webhook/', function (req, res) {
 			// There may be multiple if batched
 			console.log('This is data.entry'+data.entry);
 			console.log('This is data.entry.forEach'+data.entry.forEach());
-			data.entry.forEach(function (pageEntry) {
+			data.entry.forEach(function(pageEntry) {
 
 				var pageID = pageEntry.id;
 				console.log("pageID: "+pageID);
