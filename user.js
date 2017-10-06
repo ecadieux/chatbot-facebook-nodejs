@@ -60,6 +60,8 @@ module.exports = function(callback, userId) {
                                 });
 
                               });
+                              done();
+                              callback(user);
                               pool.end();
 
         } else {
