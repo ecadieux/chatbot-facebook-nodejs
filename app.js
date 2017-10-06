@@ -623,7 +623,7 @@ module.exports = {
 		callSendAPI(messageData);
 	}
 
-}
+};
 
 function sendQuickReply(recipientId, text, replies, metadata) {
 	var messageData = {
