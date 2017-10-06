@@ -61,7 +61,7 @@ module.exports = function(callback, userId) {
 
                     });
                     done();
-                    callback(user);
+                    //callback(user);
                     console.log('This is the callback log at the end of the user function :'+callback(user));
                     console.log('This is user at this end of the user.id function'+user.id);
             });
