@@ -414,14 +414,18 @@ function sendTextMessage(recipientId, text) {
 }
 
 module.exports = {
-  sendTextMessage: function sendTextMessage(recipientId, text) {
+  sendTextMessage: function sendTextMessage(recipientId,text,quick_reply) {
 		var messageData = {
 			recipient: {
 				id: recipientId
 			},
 			message: {
-				text: text
-			}
+				text: text,
+				quick_replies:[
+				      {
+				        "content_type":"text",
+				        "title": quick_reply
+							}
 		}
 		callSendAPI(messageData);
 	}
