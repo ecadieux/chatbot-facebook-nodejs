@@ -16,14 +16,13 @@ module.exports = function(callback, userId) {
     }
 
 }, function (error, response, body) {
-        console.log("This is the result of error :"+error);
     if (!error && response.statusCode == 200) {
         console.log("This is body :"+body);
 
-        
+
         console.log("This is the result of JSON parse:"+JSON.parse(body))
         var user = JSON.parse(body);
-        console.log("This is the log of the user object :"+user);
+    
 
         if (user.first_name) {
           console.log("The first name is: "+user.first_name);

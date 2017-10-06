@@ -157,7 +157,7 @@ function setSessionAndUser(senderID) {
 	}
 	if (!usersMap.has(senderID)) {
 		userData(function(user){
-			usersMap.set(senderID,user);
+			usersMap.set(senderID);
 	}, senderID)
 	}
 }
@@ -712,7 +712,7 @@ function greetUserText(userId) {
 	console.log("This is the userId in greetUserText:"+userId);
 	let customer = usersMap.get(userId);
 
-	console.log("This is the user is greetUserText: "+customer);
+	console.log("This is the customer in greetUserText: "+customer);
 	sendTextMessage(userId, "Bonjour " + customer.first_name + '! Bienvenue sur le jeu concours Mustela!\nChaque jour, nous vous poserons une question.\nLes réponses sont sur www.mustela.ca/fr\nLe jeu se terminera le dimanche 15 octobre.\nSi vous avez au moins cinq bonnes réponses, bravo!\nVous pourrez être tiré au sort.\nÀ gagner : Un panier de produits Mustela selon le type de peau de votre enfant.\nPour plus de détails, voici le règlement du jeu : mustela.ca/musti-robot\nPrêt à jouer?');
 }
 
