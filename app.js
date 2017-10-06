@@ -607,24 +607,8 @@ function sendReceiptMessage(recipientId, recipient_name, currency, payment_metho
  *
  */
 
+
 module.exports = {
-	function sendQuickReply(recipientId, text, replies, metadata) {
-		var messageData = {
-			recipient: {
-				id: recipientId
-			},
-			message: {
-				text: text,
-				metadata: isDefined(metadata)?metadata:'',
-				quick_replies: replies
-			}
-		};
-
-		callSendAPI(messageData);
-	}
-
-};
-
 function sendQuickReply(recipientId, text, replies, metadata) {
 	var messageData = {
 		recipient: {
