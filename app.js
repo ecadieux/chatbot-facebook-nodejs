@@ -401,7 +401,7 @@ function sendToApiAi(sender, text) {
 }
 
 // Sorry, this is bad, I know...
-sendTextMessage: function sendTextMessage(recipientId, text) {
+function sendTextMessage(recipientId, text) {
 	var messageData = {
 		recipient: {
 			id: recipientId
