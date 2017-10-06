@@ -6,6 +6,11 @@ var util = require('util');
 // var apiai = require("../module/apiai");
 var apiai = require("apiai");
 var APIAIsessionID = uuid.v1();
+
+
+module.exports = function(app){
+
+
 var options = {
     hostname: 'https://api.api.ai/v1/query',
 };
@@ -33,3 +38,4 @@ request.on('error', function(error) {
 });
 
 request.end();
+}
