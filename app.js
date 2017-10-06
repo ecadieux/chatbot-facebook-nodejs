@@ -151,12 +151,13 @@ app.post('/webhook/', function (req, res) {
 
 
 function setSessionAndUser(senderID) {
-console.log('This is user in setSessionAndUser function'+user);
+
 	if (!sessionIds.has(senderID)) {
 		sessionIds.set(senderID, uuid.v1());
 	}
 	if (!usersMap.has(senderID)) {
 		userData(function(user){
+			console.log('This is user in setSessionAndUser function'+user);
 			usersMap.set(senderID,user);
 	}, senderID)
 	}
