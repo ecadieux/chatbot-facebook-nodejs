@@ -14,8 +14,9 @@ pg.defaults.ssl = true;
 // for api.ai webhooks
 
 app.get('/webhook-apiai/', function (req, res) {
-	console.log("request");
+	console.log("webhook-apiai request":+req);
   console.log("This is webhook-apiai's result: "+res);
+
 
 	res.status(200);
 	res.send("This seems to work");
