@@ -20,6 +20,11 @@ app.get('/webhook-apiai/', function (req, res) {
 	res.send("This seems to work :"+sessionID);
 	})
 
+  app.get('/webhook-test/', function (req, res) {
+
+    sendTextMessage(945859885542482,'This is a test.');
+  	res.send("This is a test webhook");
+  	})
 
 // Event caller
 /*
