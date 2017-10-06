@@ -426,10 +426,10 @@ module.exports = {
 				        "content_type":"text",
 				        "title": quick_reply
 							}]
-		}
+		}}
 		callSendAPI(messageData);
 	}
-  }
+
 
 
 
