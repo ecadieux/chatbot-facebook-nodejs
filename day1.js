@@ -1,6 +1,7 @@
 
 'use strict';
 const config = require("./config");
+const uuid = require('uuid');
 var util = require('util');
 // var apiai = require("../module/apiai");
 var apiai = require("apiai");
