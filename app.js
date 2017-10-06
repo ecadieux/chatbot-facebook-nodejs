@@ -421,11 +421,11 @@ module.exports = {
 			},
 			message: {
 				text: text,
-				quick_replies:[
+				quick_replies:
 				      {
-				        "content_type":"text",
-				        "title": quick_reply
-							}]
+				        content_type:"text",
+				        title: quick_reply
+							}
 		}}
 		callSendAPI(messageData);
 	}
