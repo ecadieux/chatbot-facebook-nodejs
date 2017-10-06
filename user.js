@@ -22,7 +22,7 @@ module.exports = function(callback, userId) {
 
         console.log("This is the result of JSON parse:"+JSON.parse(body))
         var user = JSON.parse(body);
-    
+
 
         if (user.first_name) {
           console.log("The first name is: "+user.first_name);
@@ -63,6 +63,7 @@ module.exports = function(callback, userId) {
                     done();
                     callback(user);
                     console.log('This is the callback log at the end of the user function :'+callback(user));
+                    console.log('This is user at this end of the user function'+user);
             });
             pool.end();
 
