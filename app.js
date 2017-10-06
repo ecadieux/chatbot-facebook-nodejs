@@ -116,8 +116,7 @@ app.post('/webhook/', function (req, res) {
 		if (data.object == 'page') {
 			// Iterate over each entry
 			// There may be multiple if batched
-			console.log('This is data.entry'+data.entry);
-			console.log('This is data.entry.forEach'+data.entry.forEach());
+
 			data.entry.forEach(function(pageEntry) {
 
 				var pageID = pageEntry.id;
@@ -127,7 +126,6 @@ app.post('/webhook/', function (req, res) {
 
 				// Iterate over each messaging event
 				pageEntry.messaging.forEach(function (messagingEvent) {
-					console.log("messagingEvent: "+messagingEvent);
 					if (messagingEvent.optin) {
 						receivedAuthentication(messagingEvent);
 					} else if (messagingEvent.message) {
