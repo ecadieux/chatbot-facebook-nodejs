@@ -705,7 +705,7 @@ function sendAccountLinking(recipientId) {
 	callSendAPI(messageData);
 }
 
-console.log("This is senderID.first_name"+senderID.first_name);
+
 function greetUserText(userId) {
 	console.log("This is the userId in greetUserText:"+userId);
 	let user = usersMap.get(userId);
@@ -767,7 +767,7 @@ function receivedPostback(event) {
 
 	switch (payload) {
 		case "GET_STARTED":
-
+				console.log("This is senderID.first_name"+senderID.first_name);
 				greetUserText(senderID);
 			break;
 
